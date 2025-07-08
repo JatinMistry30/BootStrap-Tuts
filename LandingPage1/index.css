@@ -1,0 +1,241 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.decor-background {
+  position: absolute;
+  right: 0;
+  z-index: 0;
+  width: 38%;
+}
+
+.navbar {
+  background-color: transparent;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.btn-signup {
+  border-width: 2px;
+  padding: 0.5rem 1.5rem;
+}
+
+.language-select {
+  border: none;
+  background-color: transparent;
+}
+
+.hero-section {
+  position: relative;
+  z-index: 10;
+}
+.hero-section h1 {
+  font-family: "Volkhov", serif;
+  font-weight: bold;
+  font-size: 84px;
+  padding: 0;
+  margin: 0;
+  line-height: -89;
+  letter-spacing: -4%;
+}
+.hero-section h6 {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #df6951;
+}
+.hero-section p {
+  font-size: 16px;
+  line-height: 30px;
+}
+.buttons-header {
+  font-family: "Poppins", serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+.left-plane {
+  top: 8%;
+  left: 18%;
+  width: 130px;
+  z-index: 2;
+  transform: rotate(10deg);
+}
+.right-plane {
+  top: 12%;
+  right: 1%;
+  width: 130px;
+  z-index: 2;
+  transform: rotate(10deg);
+}
+
+.card {
+  border: 1px solid transparent;
+  border-radius: 20px;
+  width: 267px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+.card:nth-child(2) {
+  border: 1px solid black;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-color: #eee;
+}
+.card h6 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: #1e1d4c;
+}
+.card p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #5e6282;
+}
+.heading-2 {
+  font-size: 50px;
+  font-family: "Volkhov", serif;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+.small-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+.icon-wrapper {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.active-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+.second-container-n2 {
+  position: relative;
+  z-index: 10;
+}
+.corner-decor {
+  position: absolute;
+  bottom: -35px;
+  left: -15px;
+  width: 100px;
+  height: 100px;
+  background-color: #df6951;
+  border-radius: 20px 1px 3px 4px;
+  z-index: -1;
+}
+.main-container-flex {
+  display: flex;
+  flex-direction: row;
+}
+.destination-card {
+  background-color: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  width: 315px;
+  min-height: 457px;
+  display: flex;
+  flex-direction: column;
+}
+.destination-card span{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+.destination-card img {
+  width: 100%;
+  object-fit: cover;
+  height: 350px;
+}
+.destination-card small {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+.context-details img{
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+.destination-card:hover {
+  transform: translateY(-10px);
+}
+.third-container-destinations{
+    position: relative;
+}
+.spring-decor{
+    position: absolute;
+    bottom: 20px;
+    right: -65px;
+    z-index: -1;
+}
+.bg-blue-container {
+  width: 370px;
+  border-radius: 26px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: 20px -20px 60px rgba(72, 103, 230, 0.3);
+  background-color: #fff;
+  position: relative;
+  left: 100px;
+  z-index: 1;
+}
+
+.progress-card {
+  position: absolute;
+  top: 65%; 
+  left: 92%;
+  transform: translateX(-50%); 
+  background-color: #ffffff;
+  border-radius: 18px;
+  width: 300px;
+  z-index: 2;
+  box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.5);
+}
+.progress-card h6 {
+    font-family: 'Poppins' , sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+.progress-card p {
+    font-family: 'Poppins' , sans-serif;
+    font-weight: 300;
+    color:  #84829A;
+}
+.progress-card img {
+    border-radius: 50%;
+}
+.book-your-next-time h2 {
+    font-family: 'Poppins' , sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+.book-your-next-time p {
+    font-family: 'Poppins' , sans-serif;
+    font-weight: 300;
+    font-weight: 16px;
+}
