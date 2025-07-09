@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.editor-header {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.editor-header h1 {
+  margin: 0 0 20px 0;
+  color: #343a40;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.controls button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.controls button:hover {
+  background-color: #0056b3;
+}
+
+.controls button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.controls a {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.controls a:hover {
+  background-color: #218838;
+}
+
+.message {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.editor-container {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel__top {
+  display: flex;
+  width: 100%;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  padding: 5px 10px;
+  align-items: center;
+}
+
+.panel__basic-actions,
+.panel__devices,
+.panel__switcher {
+  display: flex;
+  gap: 5px;
+  margin-right: 20px;
+}
+
+.editor-row {
+  display: flex;
+  height: 100%;
+}
+
+.editor-canvas {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+.panel__right {
+  width: 300px;
+  background-color: #f8f9fa;
+  border-left: 1px solid #dee2e6;
+  overflow-y: auto;
+}
+
+.layers-container,
+.styles-container,
+.traits-container {
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.gjs-block-section {
+  background-color: #e9ecef;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.gjs-block-section:hover {
+  background-color: #dee2e6;
+}
+
+@media (max-width: 768px) {
+  .editor-row {
+    flex-direction: column;
+  }
+  
+  .panel__right {
+    width: 100%;
+    height: 300px;
+  }
+}
