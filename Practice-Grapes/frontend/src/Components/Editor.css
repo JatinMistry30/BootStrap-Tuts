@@ -1,0 +1,340 @@
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.back-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+.edit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.editor-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.page-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.add-page-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.add-page-button:hover {
+  background-color: #218838;
+}
+
+.save-button {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.save-button:hover {
+  background-color: #138496;
+}
+
+.view-button {
+  background-color: #ffc107;
+  color: #212529;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.view-button:hover {
+  background-color: #e0a800;
+  text-decoration: none;
+}
+
+.editor-info {
+  padding: 10px 20px;
+  background-color: #e9ecef;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 14px;
+  color: #495057;
+}
+
+.editor-info p {
+  margin: 0;
+  padding: 2px 0;
+}
+
+.editor-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.editor-info a:hover {
+  text-decoration: underline;
+}
+
+.editor-iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background-color: white;
+}
+
+.grapesjs-container {
+  flex: 1;
+  height: calc(100vh - 120px);
+  overflow: hidden;
+}
+
+.gjs-pn-panel.gjs-pn-views-container {
+  border-right: 1px solid #ddd;
+}
+
+.gjs-pn-panel.gjs-pn-options {
+  border-left: 1px solid #ddd;
+}
+
+.gjs-am-assets-cont {
+  padding: 10px;
+}
+
+.gjs-am-asset {
+  margin: 5px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.gjs-am-asset:hover {
+  border-color: #007bff;
+}
+
+.gjs-am-asset.gjs-am-highlight {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.gjs-am-add-asset {
+  background-color: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  margin: 5px;
+}
+
+.gjs-am-add-asset:hover {
+  border-color: #007bff;
+  background-color: #e7f3ff;
+}
+
+.gjs-am-file-uploader {
+  display: none;
+}
+
+.gjs-blocks-cs {
+  padding: 10px;
+}
+
+.gjs-block {
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.gjs-block:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gjs-cv-canvas {
+  background-color: #f8f9fa;
+}
+
+.gjs-frame {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 20px;
+}
+
+.gjs-toolbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+}
+
+.gjs-toolbar-item {
+  color: white;
+  padding: 5px 8px;
+  margin: 2px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.gjs-toolbar-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.gjs-sm-sector .gjs-sm-title {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.gjs-sm-property {
+  border-bottom: 1px solid #f1f1f1;
+  padding: 5px 10px;
+}
+
+.gjs-field {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 5px 8px;
+  font-size: 12px;
+}
+
+.gjs-field:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.gjs-pn-buttons {
+  background-color: #343a40;
+}
+
+.gjs-pn-btn {
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.gjs-pn-btn:hover {
+  background-color: #495057;
+}
+
+.gjs-pn-btn.gjs-pn-active {
+  background-color: #007bff;
+}
+
+.gjs-two-color {
+  color: #007bff;
+}
+
+.gjs-four-color {
+  color: #28a745;
+}
+
+.gjs-rte-toolbar {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gjs-rte-action {
+  border: none;
+  background: none;
+  padding: 5px 8px;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.gjs-rte-action:hover {
+  background-color: #f8f9fa;
+}
+
+.gjs-rte-action.gjs-rte-active {
+  background-color: #007bff;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .editor-header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .editor-controls {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .page-selector {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .page-select {
+    flex: 1;
+  }
+}

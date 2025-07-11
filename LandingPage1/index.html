@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jadoo Travel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechCorp - Innovative Solutions for Tomorrow</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <link href="index.css" rel="stylesheet" />
+    <style>
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        background-size: cover;
+        background-position: center;
+        color: white;
+      }
+      .team-member-img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+      .testimonial-img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+    </style>
   </head>
   <body>
-    <div class="position-relative">
-      <img src="Decore.png" alt="" class="decor-background" />
-    </div>
-
-    <nav class="navbar navbar-expand-lg py-3 position-relative">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <img src="Logo.png" alt="" />
+        <a class="navbar-brand fw-bold" href="#home">
+          <i class="fas fa-rocket me-2"></i>TechCorp
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -40,347 +46,111 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav align-items-center gap-5">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Destinations</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Hotels</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Flights</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Bookings</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-            <li class="nav-item">
-              <button class="btn btn-outline-dark btn-signup">Sign up</button>
+              <a class="nav-link" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <select class="form-select form-select-sm language-select">
-                <option selected>EN</option>
-                <option value="1">FR</option>
-                <option value="2">JP</option>
-              </select>
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <section class="py-5 hero-section">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-4 mb-md-0">
-            <h6 class="text-uppercase fw-bold mb-3" style="color: #df6951">
-              Best destinations around the world
-            </h6>
+        <div class="row min-vh-100 align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-4">Welcome to TechCorp</h1>
+            <p class="lead mb-4">
+              We deliver innovative technology solutions that transform your
+              business and drive success in the digital age.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="#services" class="btn btn-light btn-lg">Our Services</a>
+              <a href="#contact" class="btn btn-outline-light btn-lg"
+                >Get Started</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="http://localhost:5000/assets/image2.jpg"
+              alt="Innovation"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <h1 class="display-5 fw-bold mb-3 position-relative">
-              Travel,
-              <span class="position-relative d-inline-block"
-                >enjoy<img
-                  src="Decore2.png"
-                  class="position-absolute"
-                  style="
-                    top: 100%;
-                    left: 70%;
-                    transform: translateX(-50%);
-                    width: 350px;
-                    z-index: 1;
-                  " /></span
-              ><br />
-              and live a new<br />
-              and full life
-            </h1>
+    <!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h2 class="display-5 fw-bold">About TechCorp</h2>
+            <p class="lead text-muted">
+              Leading the way in technology innovation since 2010
+            </p>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img
+              src="http://localhost:5000/assets/image1.jpg"
+              alt="About Us"
+              class="img-fluid rounded shadow mb-4"
+            />
+          </div>
+          <div class="col-lg-6">
+            <h3 class="h2 mb-4">Our Story</h3>
             <p class="mb-4">
-              Built Wicket longer admire do barton vanity itself do in it.
-              Preferred to sportsmen it engrossed listening. Park gate sell they
-              west hard for the.
+              TechCorp was founded with a vision to bridge the gap between
+              complex technology and practical business solutions. Over the
+              years, we've grown from a small startup to a trusted partner for
+              businesses worldwide.
             </p>
-            <div class="d-flex gap-3 buttons-header">
-              <button class="btn btn-warning text-white font px-5 py-0">
-                Find out more
-              </button>
-              <button
-                class="btn d-flex align-items-center justify-content-center px-3 py-2"
-              >
-                <img
-                  src="Play-button.svg"
-                  alt="Play"
-                  class="me-2"
-                  style="width: 50px"
-                />
-                Play Video
-              </button>
-            </div>
-          </div>
-          <div class="col-md-6 text-center position-relative">
-            <img
-              src="plane.png"
-              alt="Left Plane"
-              class="position-absolute left-plane"
-            />
-            <img
-              src="Traveller-1.png"
-              alt="Traveler"
-              class="img-fluid position-relative"
-              style="max-width: 90%; z-index: 1"
-            />
-            <img
-              src="plane.png"
-              alt="Right Plane"
-              class="position-absolute right-plane"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="py-5 service-section">
-      <div class="container text-center">
-        <p class="text-uppercase mb-2 Small-heading">Category</p>
-        <h2 class="fw-bold mb-5 heading-2">We Offer Best Services</h2>
-      </div>
-
-      <div class="container">
-        <div class="row justify-content-center g-4">
-          <div class="col-lg-3 col-md-6">
-            <div class="card text-center p-4 h-100">
-              <div class="icon-wrapper mb-3 mx-auto">
-                <img src="satellite-dish.png" alt="Calculated Weather" />
-              </div>
-              <h6 class="fw-bold mb-2">Calculated Weather</h6>
-              <p class="text-muted small">
-                Built Wicket longer admire do barton vanity itself do in it.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 second-container-n2">
-            <div
-              class="card active-card text-center p-4 h-100 position-relative"
-            >
-              <div class="icon-wrapper mb-3 mx-auto">
-                <img
-                  src="Plane-Dish.png"
-                  style="object-fit: cover"
-                  alt="Best Flights"
-                />
-              </div>
-
-              <h6 class="fw-bold mb-2">Best Flights</h6>
-              <p class="text-muted small">
-                Engrossed listening. Park gate sell they west hard for the.
-              </p>
-            </div>
-            <div class="corner-decor"></div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="card text-center p-4 h-100">
-              <div class="icon-wrapper mb-3 mx-auto">
-                <img src="Mike-Dish.png" alt="Local Events" />
-              </div>
-              <h6 class="fw-bold mb-2">Local Events</h6>
-              <p class="text-muted small">
-                Barton vanity itself do in it. Preferd to men it engrossed
-                listening.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="card text-center p-4 h-100">
-              <div class="icon-wrapper mb-3 mx-auto">
-                <img src="Gear-Dish.png" alt="Customization" />
-              </div>
-              <h6 class="fw-bold mb-2">Customization</h6>
-              <p class="text-muted small">
-                We deliver outsourced aviation services for military customers
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="py-5">
-      <div class="container text-center">
-        <p class="text-uppercase mb-2 small-heading">Top Selling</p>
-        <h2 class="fw-bold mb-5 heading-2">Top Destinations</h2>
-      </div>
-
-      <div class="container">
-        <div class="row justify-content-center g-4">
-          <div class="col-3">
-            <div class="destination-card">
-              <img
-                src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1096&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                class="img-fluid rounded-top"
-                alt="Rome"
-              />
-              <div class="p-3">
-                <div class="d-flex justify-content-between mb-2">
-                  <span class="">Rome, Italy</span>
-                  <span class="text-muted">$5.42k</span>
-                </div>
-                <div
-                  class="d-flex align-items-center gap-2 text-muted context-details"
-                >
-                  <img src="navigation-icon.svg" style="width: 16px" />
-                  <small>10 Days Trip</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="destination-card">
-              <img
-                src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                class="img-fluid rounded-top"
-                alt="London"
-              />
-              <div class="p-3">
-                <div class="d-flex justify-content-between mb-2">
-                  <span class="">London, UK</span>
-                  <span class="text-muted">$4.2k</span>
-                </div>
-                <div class="d-flex align-items-center gap-2 context-details">
-                  <img src="navigation-icon.svg" style="width: 16px" />
-                  <small>12 Days Trip</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-3 third-container-destinations">
-            <div class="destination-card">
-              <img
-                src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                class="img-fluid rounded-top"
-                alt="Europe"
-              />
-              <div class="p-3">
-                <div class="d-flex justify-content-between mb-2">
-                  <span class="">Full Europe</span>
-                  <span class="text-muted">$15k</span>
-                </div>
-                <div
-                  class="d-flex align-items-center gap-2 text-muted context-details"
-                >
-                  <img src="navigation-icon.svg" style="width: 16px" />
-                  <small>28 Days Trip</small>
-                </div>
-              </div>
-            </div>
-            <img src="Decore-Spring.png" class="spring-decor" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-5">
-      <div class="container ">
-        <div class="row align-items-center">
-          <div class="col-md-5 ">
-            <p class="text-uppercase small-heading text-muted mb-2">
-              Easy and Fast
+            <p class="mb-4">
+              Our team of experts combines technical excellence with business
+              acumen to deliver solutions that not only work but drive real
+              results for our clients.
             </p>
-            <h2 class="heading-2 mb-4">Book Your Next Trip In 3 Easy Steps</h2>
-
-            <div class="d-flex mb-4 book-your-next-time">
-              <img
-                src="Destination-1.png"
-                width="50px"
-                height="50px"
-                alt="Choose Destination"
-                class="me-3"
-              />
-              <div>
-                <h6 class="fw-bold mb-1">Choose Destination</h6>
-                <p class="mb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
-                  tortor tempus.
-                </p>
-              </div>
-            </div>
-
-            <div class="d-flex mb-4">
-              <img
-                src="Payment-1.png"
-                width="50px"
-                height="50px"
-                alt="Make Payment"
-                class="me-3"
-              />
-              <div>
-                <h6 class="fw-bold mb-1">Make Payment</h6>
-                <p class="mb-0 text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
-                  tortor tempus.
-                </p>
-              </div>
-            </div>
-
-            <div class="d-flex">
-              <img
-                src="Reach-1.png"
-                width="50px"
-                height="50px"
-                alt="Reach Airport"
-                class="me-3"
-              />
-              <div>
-                <h6 class="fw-bold mb-1">Reach Airport on Selected Date</h6>
-                <p class="mb-0 text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
-                  tortor tempus.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-5 text-center position-relative">
-            <div
-              class="progress-card p-3 d-flex align-items-center  shadow-sm"
-            >
-              <img
-                src="DP-image.png"
-                alt="Profile"
-                class="me-3"
-                width="50"
-                height="50"
-              />
-              <div class="text-start">
-                <p class="mb-1 text-muted small">Ongoing</p>
-                <h6 class="fw-bold mb-1">Trip to Rome</h6>
-                <div class="d-flex align-items-center gap-2">
-                  <span class="text-muted small">30%</span>
-                  <span class="text-muted small">completed</span>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                  <span>Expert Team</span>
                 </div>
-                <img
-                  src="Completion-half-bar.png"
-                  alt="Progress"
-                  class="img-fluid mt-1"
-                />
-              </div>
-            </div>
-
-            <div class="bg-blue-container p-4 mt-5">
-              <img
-                src="Girl-image.png"
-                alt="Trip Image"
-                class="img-fluid mb-3"
-              />
-              <h6 class="fw-bold mb-1">Trip To Greece</h6>
-              <p class="text-muted mb-3">14-29 June | By Robbin John</p>
-              <img src="OPTIONS.png" alt="Options" class="mb-3" />
-              <div
-                class="d-flex justify-content-between w-100 align-items-center"
-              >
-                <div class="d-flex align-items-center gap-2">
-                  <img src="building-1.png" alt="People" width="20" />
-                  <p class="mb-0 small text-muted">24 people going</p>
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                  <span>Proven Results</span>
                 </div>
-                <img src="heart.png" alt="Like" width="20" />
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                  <span>24/7 Support</span>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                  <span>Global Reach</span>
+                </div>
               </div>
             </div>
           </div>
@@ -388,25 +158,184 @@
       </div>
     </section>
 
-    <section class="py-5">
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-5">
-            <h6>Testimonials</h6>
-            <h1 class="heading-1">What People Day About us</h1>
-            
-
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h2 class="display-5 fw-bold">Why Choose Us</h2>
+            <p class="lead text-muted">
+              We deliver excellence through innovation and dedication
+            </p>
           </div>
-          <div class="col-md-5">
-            
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="text-center h-100">
+              <i
+                class="fas fa-cogs text-primary mb-3"
+                style="font-size: 3rem"
+              ></i>
+              <h4>Custom Solutions</h4>
+              <p class="text-muted">
+                Tailored technology solutions designed specifically for your
+                business needs and goals.
+              </p>
+            </div>
           </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="text-center h-100">
+              <i
+                class="fas fa-shield-alt text-primary mb-3"
+                style="font-size: 3rem"
+              ></i>
+              <h4>Security First</h4>
+              <p class="text-muted">
+                Enterprise-grade security measures to protect your data and
+                ensure business continuity.
+              </p>
+            </div>
           </div>
-          <div class="row">
-            
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="text-center h-100">
+              <i
+                class="fas fa-chart-line text-primary mb-3"
+                style="font-size: 3rem"
+              ></i>
+              <h4>Scalable Growth</h4>
+              <p class="text-muted">
+                Solutions that grow with your business, ensuring long-term
+                success and adaptability.
+              </p>
+            </div>
           </div>
-        
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="text-center h-100">
+              <i
+                class="fas fa-headset text-primary mb-3"
+                style="font-size: 3rem"
+              ></i>
+              <h4>24/7 Support</h4>
+              <p class="text-muted">
+                Round-the-clock support from our expert team to keep your
+                systems running smoothly.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h2 class="display-5 fw-bold">Our Services</h2>
+            <p class="lead text-muted">
+              Comprehensive technology solutions for modern businesses
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i
+                  class="fas fa-code text-primary mb-3"
+                  style="font-size: 3rem"
+                ></i>
+                <h5 class="card-title">Web Development</h5>
+                <p class="card-text">
+                  Modern, responsive websites and web applications built with
+                  cutting-edge technologies.
+                </p>
+                <a href="#contact" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i
+                  class="fas fa-mobile-alt text-primary mb-3"
+                  style="font-size: 3rem"
+                ></i>
+                <h5 class="card-title">Mobile Apps</h5>
+                <p class="card-text">
+                  Native and cross-platform mobile applications for iOS and
+                  Android devices.
+                </p>
+                <a href="#contact" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i
+                  class="fas fa-cloud text-primary mb-3"
+                  style="font-size: 3rem"
+                ></i>
+                <h5 class="card-title">Cloud Solutions</h5>
+                <p class="card-text">
+                  Secure, scalable cloud infrastructure and migration services
+                  for your business.
+                </p>
+                <a href="#contact" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i
+                  class="fas fa-database text-primary mb-3"
+                  style="font-size: 3rem"
+                ></i>
+                <h5 class="card-title">Data Analytics</h5>
+                <p class="card-text">
+                  Transform your data into actionable insights with our
+                  analytics solutions.
+                </p>
+                <a href="#contact" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i
+                  class="fas fa-robot text-primary mb-3"
+                  style="font-size: 3rem"
+                ></i>
+                <h5 class="card-title">AI & Machine Learning</h5>
+                <p class="card-text">
+                  Leverage artificial intelligence to automate processes and
+                  gain competitive advantage.
+                </p>
+                <a href="#contact" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i
+                  class="fas fa-tools text-primary mb-3"
+                  style="font-size: 3rem"
+                ></i>
+                <h5 class="card-title">IT Consulting</h5>
+                <p class="card-text">
+                  Strategic IT consulting to optimize your technology
+                  infrastructure and processes.
+                </p>
+                <a href="#contact" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

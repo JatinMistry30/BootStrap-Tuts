@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - TechCorp</title>
+  <script>
+    (function() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+
+      script.addEventListener('load', function(event) {
+        var widget = document.createElement('div');
+        widget.style.position = 'fixed';
+        widget.style.bottom = '20px';
+        widget.style.right = '20px';
+        widget.style.zIndex = '9999';
+
+        const buttonColor = 'white';
+        const buttonText = 'black';
+        const widgetButtonText = 'Contact Us';
+        const widgetCloseText = 'x';
+
+        widget.innerHTML = `
+          <div id="contact-form">
+            <button id="widget-button" style="border: none; border-radius: 2px; color: ${buttonText}; background-color: ${buttonColor}" onClick="(function(event){
+              var widget = getElementById('contact-form-container');
+              if (widget.style.display == 'none') {
+                widget.style.display = 'block';
+                event.target.innerHTML = '${widgetCloseText}';
+              }
+              else {
+                widget.style.display = 'none';
+                event.target.innerHTML = '${widgetButtonText}';
+              }
+            })(event)">
+            ${widgetCloseText}
+            </button>
+            <div id="contact-form-container"></div>
+          </div>
+        `;
+
+        document.body.appendChild(widget);
+
+        window.ContactFormWidget.renderWidget('contact-form-container', {
+          backgroundColor: '#f0f0f2',
+          fontColor: 'black',
+          buttonColor: '#1FA868',
+          apiAcct: '0123f136d6bf0ecc6d4d2302d2c6954f',
+          apiToken: 'c09e81fd8bbb28aa4526c491069b479a1338c1d457a7a6c1f9fef2a97b6107c4'
+        });
+      });
+
+      script.src = 'https://turbosteed.com/contact-widget.js';
+      document.head.appendChild(script);
+    })();
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      padding-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">TechCorp</a>
+    </div>
+  </nav>
+
+  <section class="container my-5">
+    <h2 class="fw-bold mb-4 text-center">Contact Us</h2>
+    <p class="text-center text-muted mb-5">We'd love to hear from you. Use the widget below to get in touch.</p>
+  </section>
+</body>
+</html>
