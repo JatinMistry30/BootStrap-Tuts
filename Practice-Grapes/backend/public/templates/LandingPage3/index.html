@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Next Invest</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .hero {
+        background: url("assets/hero.jpg") no-repeat center center;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        position: relative;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 50, 0.5);
+        z-index: 0;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        padding: 0 20px;
+      }
+
+      .card img {
+        height: 200px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3 sticky-top"
+    >
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <a class="navbar-brand fw-bold text-success me-4" href="#"
+            >NEXT INVEST</a
+          >
+          <ul class="navbar-nav flex-row gap-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Investment Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">How it works</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <a href="#" class="btn btn-success">LOGIN</a>
+          <a href="#" class="btn btn-outline-danger">REGISTER</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="container hero-content">
+        <h1 class="display-5 fw-bold">
+          Meaningful investments in Main Street businesses
+        </h1>
+        <p class="lead">
+          Browse vetted investment offerings in communities all over the US.
+        </p>
+        <a href="#" class="btn btn-success btn-lg">GET STARTED</a>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4 fw-bold">Offerings open for investment</h2>
+        <p class="text-center text-muted mb-5">
+          Explore pre-vetted investment opportunities available in a growing
+          number of industry categories.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="./assets/Project1.jpg"
+                class="card-img-top"
+                alt="Project 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Oxalis <small class="text-muted">Brooklyn, NY</small>
+                </h5>
+                <p class="card-text">
+                  A recognized leader in language immersion & early education,
+                  opening second school.
+                </p>
+                <p class="text-success fw-bold">
+                  $574,920 raised of $1,000,000
+                </p>
+                <ul class="list-unstyled small">
+                  <li><strong>Security Type:</strong> Revenue Sharing Note</li>
+                  <li><strong>Investment Multiple:</strong> 1.4x</li>
+                  <li><strong>Maturity:</strong> 48 Months</li>
+                  <li><strong>Min. Investment:</strong> $100</li>
+                </ul>
+                <a href="#" class="btn btn-danger w-100">VIEW</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="./assets/Project2.jpg"
+                class="card-img-top"
+                alt="Project 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Oxalis <small class="text-muted">Brooklyn, NY</small>
+                </h5>
+                <p class="card-text">
+                  A recognized leader in language immersion & early education,
+                  opening second school.
+                </p>
+                <p class="text-success fw-bold">
+                  $574,920 raised of $1,000,000
+                </p>
+                <ul class="list-unstyled small">
+                  <li><strong>Security Type:</strong> Revenue Sharing Note</li>
+                  <li><strong>Investment Multiple:</strong> 1.4x</li>
+                  <li><strong>Maturity:</strong> 48 Months</li>
+                  <li><strong>Min. Investment:</strong> $100</li>
+                </ul>
+                <a href="#" class="btn btn-danger w-100">VIEW</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="assets/Project3.jpg"
+                class="card-img-top"
+                alt="Project 3"
+              />
+
+              <div class="card-body">
+                <h5 class="card-title">
+                  Oxalis <small class="text-muted">Brooklyn, NY</small>
+                </h5>
+                <p class="card-text">
+                  A recognized leader in language immersion & early education,
+                  opening second school.
+                </p>
+                <p class="text-success fw-bold">
+                  $574,920 raised of $1,000,000
+                </p>
+                <ul class="list-unstyled small">
+                  <li><strong>Security Type:</strong> Revenue Sharing Note</li>
+                  <li><strong>Investment Multiple:</strong> 1.4x</li>
+                  <li><strong>Maturity:</strong> 48 Months</li>
+                  <li><strong>Min. Investment:</strong> $100</li>
+                </ul>
+                <a href="#" class="btn btn-danger w-100">VIEW</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-light py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h3>$7M+ paid out to investors</h3>
+            <p>
+              Next Invest has already paid out over $7M in cash returns to
+              investors. Earn potential cash payments through unique
+              revenue-share and debt financing investments.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="assets/graph.jpg" alt="Graph" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h3>Looking to raise capital for your growing business?</h3>
+            <p>
+              Whether expanding or opening a brand-new concept, we make it easy
+              to raise money from thousands of local investors.
+            </p>
+            <a href="#" class="btn btn-success">APPLY ONLINE</a>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="assets/grow-illustration.jpg"
+              alt="Capital Raising"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
