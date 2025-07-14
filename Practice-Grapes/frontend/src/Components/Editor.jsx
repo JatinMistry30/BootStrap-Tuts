@@ -44,14 +44,47 @@ const Editor = ({ templateData, onBack }) => {
 
   const loadAssets = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/api/template/${originalTemplateName}/assets`);
-      const assets = response.data;
+      const templateAssetsResponse = await axios.get(`${BASE_URL}/api/template/${originalTemplateName}/assets`);
+      const templateAssets = templateAssetsResponse.data;
       
-      if (editorRef.current && assets.length > 0) {
+      const globalAssetsResponse = await axios.get(`${BASE_URL}/api/assets`);
+      const globalAssets = globalAssetsResponse.data;
+      
+      
+      
+      if (editorRef.current) {
         const assetManager = editorRef.current.AssetManager;
-        assets.forEach(asset => {
-          assetManager.add(asset);
-        });
+        
+        assetManager.getAll().reset();
+        
+        if (templateAssets && templateAssets.length > 0) {
+          templateAssets.forEach(asset => {
+
+            assetManager.add({
+              src: asset.src || asset.url,
+              type: asset.type || 'image',
+              name: asset.name || asset.filename,
+              category: 'Template Assets'
+            });
+          });
+        }
+        
+        if (globalAssets && globalAssets.length > 0) {
+          globalAssets.forEach(asset => {
+
+            const formattedAsset = {
+              src: asset.url || asset.src,
+              type: asset.type || 'image',
+              name: asset.name || asset.filename || 'Asset',
+              category: 'My Assets'
+            };
+            if (formattedAsset.src) {
+              assetManager.add(formattedAsset);
+            }
+          });
+        }
+        
+        console.log('Total assets loaded:', assetManager.getAll().length);
       }
     } catch (error) {
       console.error('Error loading assets:', error);
@@ -94,7 +127,38 @@ const Editor = ({ templateData, onBack }) => {
             modalTitle: "Asset Manager",
             addBtnText: "Add Asset",
             searchPlaceholder: "Search assets...",
-            headers: {},
+            showUrlInput: true,
+            categories: [
+              {
+                id: 'template',
+                label: 'Template Assets'
+              },
+              {
+                id: 'myassets',
+                label: 'My Assets'
+              }
+            ],
+            customUpload: async (files, options) => {
+              const formData = new FormData();
+              for (let i = 0; i < files.length; i++) {
+                formData.append('files', files[i]);
+              }
+              
+              try {
+                const response = await axios.post(`${BASE_URL}/api/assets/upload`, formData, {
+                  headers: {
+                    'Content-Type': 'multipart/form-data',
+                  },
+                });
+                
+                await loadAssets();
+                
+                return response.data;
+              } catch (error) {
+                console.error('Upload error:', error);
+                throw error;
+              }
+            },
           },
           plugins: [grapesjsPresetWebpage],
           pluginsOpts: {
@@ -117,20 +181,65 @@ const Editor = ({ templateData, onBack }) => {
 
         await loadAssets();
 
-        editorRef.current.on("asset:upload:response", (response) => {
+        editorRef.current.on("asset:upload:response", async (response) => {
           const assetUrl = response.url;
           if (assetUrl) {
+
             editorRef.current.AssetManager.add({
               src: assetUrl,
-              type: 'image',
-              name: response.filename
+              type: response.type || 'image',
+              name: response.filename || response.name,
+              category: 'Template Assets'
             });
+            
+            setTimeout(async () => {
+              await loadAssets();
+            }, 1000);
           }
         });
 
         editorRef.current.on("asset:upload:error", (error) => {
           console.error("Asset upload error:", error);
           alert("Failed to upload asset. Please try again.");
+        });
+
+        editorRef.current.on('asset:open', async () => {
+          console.log('Asset manager opened, refreshing assets...');
+          await loadAssets();
+        });
+
+        editorRef.current.on('load', () => {
+          const assetManager = editorRef.current.AssetManager;
+          
+          setTimeout(() => {
+            const assetContainer = document.querySelector('.gjs-am-assets-cont');
+            const assetHeader = document.querySelector('.gjs-am-assets-header');
+            
+            if (assetHeader && !document.querySelector('.custom-asset-controls')) {
+              const controlsDiv = document.createElement('div');
+              controlsDiv.className = 'custom-asset-controls';
+              controlsDiv.style.cssText = 'padding: 10px; border-bottom: 1px solid #ddd; display: flex; gap: 10px;';
+              
+              const refreshButton = document.createElement('button');
+              refreshButton.innerHTML = '🔄 Refresh Assets';
+              refreshButton.className = 'gjs-btn-prim refresh-assets-btn';
+              refreshButton.onclick = async () => {
+                console.log('Manual refresh triggered');
+                await loadAssets();
+              };
+              
+              const manageButton = document.createElement('button');
+              manageButton.innerHTML = '📁 Manage Assets';
+              manageButton.className = 'gjs-btn-prim manage-assets-btn';
+              manageButton.onclick = () => {
+                window.open('/asset-manager', '_blank');
+              };
+              
+              controlsDiv.appendChild(refreshButton);
+              controlsDiv.appendChild(manageButton);
+              assetHeader.appendChild(controlsDiv);
+            }
+          }, 500);
         });
 
         editorRef.current.on('component:update', () => {
@@ -140,6 +249,16 @@ const Editor = ({ templateData, onBack }) => {
         editorRef.current.on('style:update', () => {
           saveCurrentPageData();
         });
+
+        // Add periodic refresh of assets to keep them in sync
+        const assetRefreshInterval = setInterval(async () => {
+          if (editorRef.current) {
+            await loadAssets();
+          }
+        }, 30000); // Refresh every 30 seconds
+
+        // Store interval reference for cleanup
+        editorRef.current.assetRefreshInterval = assetRefreshInterval;
       }
 
       const parser = new DOMParser();
@@ -262,6 +381,20 @@ const Editor = ({ templateData, onBack }) => {
     }
   };
 
+  const refreshAssets = async () => {
+    if (editorRef.current) {
+      await loadAssets();
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (editorRef.current && editorRef.current.assetRefreshInterval) {
+        clearInterval(editorRef.current.assetRefreshInterval);
+      }
+    };
+  }, []);
+
   return (
     <div className="editor-container">
       <div className="editor-header">
@@ -291,6 +424,9 @@ const Editor = ({ templateData, onBack }) => {
                 + Add Page
               </button>
             </div>
+            <button className="refresh-assets-button" onClick={refreshAssets}>
+              🔄 Refresh Assets
+            </button>
             <button className="save-button" onClick={handleSave}>
               💾 Save & Publish
             </button>

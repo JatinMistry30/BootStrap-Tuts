@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact - Stationary Shop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .fontPoppins {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Stationary</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-light py-5 text-center fontPoppins">
+      <div class="container">
+        <h1 class="fw-bold">Contact Us</h1>
+        <p class="fs-5">We’d love to hear from you. Reach out to us!</p>
+      </div>
+    </header>
+
+    <!-- Contact Form -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form class="bg-white p-4 shadow rounded fontPoppins">
+              <div class="mb-3">
+                <label for="name" class="form-label fw-bold">Full Name</label>
+                <input type="text" class="form-control" id="name" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label fw-bold">Email</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label fw-bold">Message</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-dark px-4">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-4 pb-2 fontPoppins mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h5 class="fw-bold">Stationary Shop</h5>
+            <p class="small">Your one-stop solution for premium Japanese stationary items.</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5 class="fw-bold">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+              <li><a href="products.html" class="text-white text-decoration-none">Products</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5 class="fw-bold">Contact</h5>
+            <p class="mb-1">support@stationaryshop.com</p>
+            <p class="mb-1">+91 98765 43210</p>
+            <p class="mb-0">Mumbai, India</p>
+          </div>
+        </div>
+        <hr class="border-light" />
+        <div class="text-center small">
+          &copy; 2025 Stationary Shop. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
